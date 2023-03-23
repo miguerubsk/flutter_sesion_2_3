@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sesion_2_3/lista_compra_pantalla_vacia.dart';
+import 'package:provider/provider.dart';
+
+import 'lista_compra.dart';
 
 
 class ListaCompraPantalla extends StatelessWidget {
@@ -7,7 +10,7 @@ class ListaCompraPantalla extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const ListaCompraPantallaVacia(),
+      body: construirPantallaListaCompra(),
       floatingActionButton: FloatingActionButton(
         elevation: 0,
         onPressed: () {
@@ -16,4 +19,17 @@ class ListaCompraPantalla extends StatelessWidget {
       ),
     );
   }
+
+  Widget construirPantallaListaCompra() {
+    return Consumer<ListaCompra>(
+      builder: (context, manager, child) {
+        if (manager.productos.isNotEmpty) {
+          return Container( color: Colors.blueGrey, );
+        } else {
+          return const ListaCompraPantallaVacia();
+        }
+      },
+    );
+  }
+
 }
