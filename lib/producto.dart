@@ -1,7 +1,11 @@
 enum Importancia{
-  baja,
-  media,
-  alta,
+  baja('Baja'),
+  media('Media'),
+  alta('Alta');
+
+  final String _nombre;
+  String get nombre => _nombre;
+  const Importancia(this._nombre);
 }
 
 class Producto{
