@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_sesion_2_3/producto.dart';
+import 'package:flutter_sesion_2_3/Models/model.dart';
 
 class ListaCompra extends ChangeNotifier{
   final _productos = <Producto>[];
@@ -21,9 +21,9 @@ class ListaCompra extends ChangeNotifier{
     notifyListeners();
   }
 
-  void marcaCompletado(int index){
+  void marcaCompletado(int index, bool valor){
     final producto = _productos[index];
-    updateProducto(producto.copiaSiNulo(completado: true), index);
+    updateProducto(producto.copiaSiNulo(completado: valor), index);
     notifyListeners();
   }
 

@@ -1,11 +1,15 @@
+import 'package:flutter/material.dart';
+
 enum Importancia{
-  baja('Baja'),
-  media('Media'),
-  alta('Alta');
+  baja('Baja', Colors.black),
+  media('Media', Colors.orangeAccent),
+  alta('Alta', Colors.red);
 
   final String _nombre;
+  final Color _color;
   String get nombre => _nombre;
-  const Importancia(this._nombre);
+  Color get color => _color;
+  const Importancia(this._nombre, this._color);
 }
 
 class Producto{
@@ -39,4 +43,8 @@ class Producto{
     );
   }
 
+  @override
+  String toString() {
+    return '$id;$nombre;$importancia;$cantidad;$completado';
+  }
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sesion_2_3/lista_compra_add_producto.dart';
-import 'package:flutter_sesion_2_3/lista_compra_pantalla_vacia.dart';
+import 'package:flutter_sesion_2_3/Views/lista_compra_add_producto.dart';
+import 'package:flutter_sesion_2_3/Views/lista_compra_pantalla_vacia.dart';
 import 'package:provider/provider.dart';
-
-import 'lista_compra.dart';
+import 'package:flutter_sesion_2_3/Models/model.dart';
+import 'lista_compra_pantalla_llena.dart';
 
 
 class ListaCompraPantalla extends StatelessWidget {
@@ -38,7 +38,7 @@ class ListaCompraPantalla extends StatelessWidget {
     return Consumer<ListaCompra>(
       builder: (context, manager, child) {
         if (manager.productos.isNotEmpty) {
-          return Container( color: Colors.blueGrey, );
+          return ListaCompraPantallaLlena(listaCompra: manager);
         } else {
           return const ListaCompraPantallaVacia();
         }

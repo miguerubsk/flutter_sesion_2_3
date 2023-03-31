@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'lista_compra.dart';
-import 'monster_chef_tema.dart';
-import 'monster_chef_pagina_principal.dart';
+import 'package:flutter_sesion_2_3/Models/model.dart';
+import 'package:flutter_sesion_2_3/Views/views.dart';
+import 'package:flutter_sesion_2_3/Components/components.dart';
 
 
 class MonsterChefApp extends StatelessWidget {

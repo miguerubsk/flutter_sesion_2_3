@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sesion_2_3/producto.dart';
+import 'package:flutter_sesion_2_3/Models/model.dart';
 import 'package:uuid/uuid.dart';
 
 class ListaCompraAddProducto extends StatefulWidget {
@@ -73,6 +73,13 @@ class _ListaCompraAddProductoState extends State<ListaCompraAddProducto> {
   @override
   void initState() {
     super.initState();
+    final productoOriginal = widget.productoOriginal;
+    if (productoOriginal != null) {
+      _controladorNombre.text = productoOriginal.nombre;
+      _nombre = productoOriginal.nombre;
+      _valorActualSlider = productoOriginal.cantidad;
+      _importancia = productoOriginal.importancia;
+    }
     _controladorNombre.addListener(() {_nombre = _controladorNombre.text;});
   }
 

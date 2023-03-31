@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'lista_compra_pantalla.dart';
-import 'recetas_pantalla.dart';
+import 'package:flutter_sesion_2_3/Views/views.dart';
 
 class MonsterChefPaginaPrincipal extends StatefulWidget {
   const MonsterChefPaginaPrincipal({Key? key}) : super(key: key);
